@@ -1,0 +1,56 @@
+@import '../../../styles/variables.scss';
+
+.statistics__item {
+  z-index: 2;
+
+  max-width: 540px;
+  margin-inline: auto;
+
+  @media (min-width: 768px) {
+    max-width: 350px;
+    text-align: left;
+
+
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        margin-top: calc(44px * ($i - 1));
+      }
+    }
+  }
+
+  &-image {
+    height: 88px;
+    width: 88px;
+    background-color: $clr-400;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    margin-bottom: -44px;
+
+    position: relative;
+
+    @media (min-width: 768px) {
+      margin-left: 2rem;
+    }
+  }
+
+  &-content {
+    padding: 4.875rem 2rem 2rem 2rem;
+    border-radius: 5px;
+    background-color: $clr-white;
+  }
+
+  &-title {
+    font-size: 1.375rem;
+    font-weight: $fw-bold;
+  }
+
+  &-text {
+    margin-top: 0.75rem;
+    font-size: 0.938rem;
+    line-height: 1.73;
+  }
+}

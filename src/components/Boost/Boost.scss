@@ -1,0 +1,39 @@
+@import '../../styles/variables.scss';
+
+.boost {
+  padding: 5.625rem 0;
+  background-image: url('../../images/bg-boost-mobile.svg');
+  background-color: $clr-400;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    padding: 3.5rem 0;
+    background-image: url('../../images/bg-boost-desktop.svg');
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    line-height: 1.72;
+    letter-spacing: -0.7px;
+    font-weight: $fw-bold;
+    color: $clr-white;
+
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+  }
+
+  &__btn {
+    margin-top: 1rem;
+    padding: 14px 40px 12px 40px;
+    font-size: 1.25rem;
+
+    @media (min-width: 768px) {
+      margin-top: 2rem;
+    }
+  }
+}

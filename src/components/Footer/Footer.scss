@@ -1,0 +1,83 @@
+@import '../../styles/variables.scss';
+
+.footer {
+  background-color: $clr-600;
+  padding: 3.5rem 0;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin: 3rem 0;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      margin: 0;
+    }
+
+    &-column {
+      display: flex;
+      flex-direction: column;
+      letter-spacing: -0.25px;
+      gap: 0.625rem;
+    }
+
+    &-title {
+      color: $clr-white;
+      font-weight: $fw-bold;
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    &-item {
+      color: #BFBFBF;
+      font-size: 0.938rem;
+      transition: color 0.3s;
+    
+      &:hover {
+        color: $clr-accent;
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+
+    &-icon {
+      width: 24px;
+      cursor: pointer;
+
+      path {
+        transition: fill 0.3s;
+      }
+
+      &:hover path {
+        fill: $clr-accent;
+      }
+    }
+  }
+}

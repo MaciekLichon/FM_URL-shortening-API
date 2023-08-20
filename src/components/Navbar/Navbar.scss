@@ -1,0 +1,148 @@
+@import '../../styles/variables.scss';
+
+.navbar {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+
+  @media (min-width: 1024px) {
+    margin-top: 3rem;
+    margin-bottom: 4.75rem;
+  }
+  
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 2.875rem;
+    position: relative;
+
+    @media (max-width: 767px) {
+      justify-content: space-between;
+    }
+  }
+
+  &__hamburger {
+    display: none;
+
+    @media (max-width: 767px) {
+      display: block;
+      width: 24px;
+      height: 21px;
+      position: relative;
+      cursor: pointer;
+
+      span {
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background-color: $clr-200;
+        left: 0;
+        transition: top 0.3s, opacity 0.15s, transform 0.3s;
+      }
+
+      span:nth-child(1) { top: 0; }
+      span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+      span:nth-child(3) { bottom: 0; }
+
+      &-open {
+
+        span:nth-child(1) {
+          top: 50%;
+          transform: translateY(-50%) rotate(45deg);
+        }
+        span:nth-child(2) {
+          opacity: 0;
+        }
+        span:nth-child(3) {
+          top: 50%;
+          transform: translateY(-50%) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  &__menu {
+    width: 100%;
+
+    @media (max-width: 767px) {
+      display: grid;
+      grid-template-rows: 0fr;
+      position: absolute;
+      top: calc(100% + 24px);
+
+      transition: grid-template-rows 0.3s;
+
+      & > div {
+        overflow: hidden;
+      }
+    }
+
+    &-open {
+      @media (max-width: 767px) {
+        grid-template-rows: 1fr;
+      }
+    }
+  }
+
+  &__links {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      border-radius: 10px;
+      background-color: $clr-400;
+      padding: 2.5rem 1.5rem;
+    }
+
+    &-item {
+      font-weight: $fw-bold;
+      font-size: 0.938rem;
+      color: $clr-200;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $clr-500;
+      }
+
+      @media (max-width: 767px) {
+        color: $clr-white;
+        font-size: 1.125rem;
+        
+        &:hover {
+          color: $clr-accent;
+        }
+      }
+    }
+
+    &-pages, &-controls {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      @media (max-width: 767px) {
+        flex-direction: column;
+        gap: 1.875rem;
+        width: 100%;
+      }
+    }
+
+    &-pages {
+      @media (max-width: 767px) {
+        padding-bottom: 1.875rem;
+        margin-bottom: 1.875rem;
+        border-bottom: 1px solid $clr-200;
+      }
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    padding: 8px 24px;
+
+    @media (max-width: 767px) {
+      padding: 12px 0 9px 0;
+    }
+  }
+}
